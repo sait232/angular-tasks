@@ -1,0 +1,323 @@
+<!-- <div >
+    <ol *ngFor="let x of course let i=index">
+        
+        <li [style.color]="(i%2==0)?'green':'red'">{{i}}--{{x}}</li>
+    </ol>
+  
+</div>
+
+<div>
+    <input type="text" name="sai" id="sa" (keyup)="calculate($event)">
+    <input type="text" name="s" id="sai" (keyup)="calculate1($event)">
+    <input type="text" name="sait" id="sat" value="{{add}}" isDisabled>
+
+</div>
+
+
+
+
+
+<h1>+ indication</h1>
+<div>
+    <input type="number" (keyup)="calci($event)">
+    <input type="number" (keyup)="calci1($event)">
+    <input type="number" value="{{add1}}">
+</div>
+<h1>- indication</h1>
+<div>
+    <input type="number" (keyup)="calci11($event)">
+    <input type="number" (keyup)="calci12($event)">
+    <input type="number" value="{{add2}}">
+</div>
+<h1>calculator</h1>
+<div>
+    <input type="number" [(ngModel)]="no"  >
+    <input type="number" [(ngModel)]="no1"  >
+    <button (click)="calculation()"   >add</button>
+    
+ {{addno}}
+</div>
+<h1>NG SWITCH</h1>
+<div [ngSwitch]="color">
+    <h3 *ngSwitchCase="'red'" [style.color]="'green'">iam big </h3>
+    <h3 *ngSwitchCase="'green'"[style.color]="'red'">iam tall</h3>
+</div>
+<h1>19-5-21</h1>
+<h1>task1:NG CLASS</h1>
+<div [ngClass]=[angularClass,angularClass1]>who are you</div>
+
+<h1> task2:two inputs</h1>
+<div>
+    <input type="text" id="css" (keyup)="csk1($event)">
+    <input type="text" id="css1" value="{{task2}}"  > 
+</div>
+<h1>task3:5buttons</h1>
+<div>
+    <button [ngClass]="button1" (click)="onBlack()">one</button>
+    <button [ngClass]="button2" (click)="onRed()">two</button>
+    <button [ngClass]="button3" (click)="onGreen()">three</button>
+    <button [ngClass]="button4" (click)="onOrange()">four</button>
+    <button [ngClass]="button5" >five</button>   
+</div>
+
+<div>
+    <h1>add or remove</h1>
+    <input type="text" id="name" name="ss" [(ngModel)]="c1">
+    <button (click)="addme()">add</button>
+<div *ngFor="let x of c1Array">
+    {{x}}
+</div>
+<button (click)="delete()">remove</button>
+   
+</div>
+<h1>input box colors</h1>
+<div>
+    <input type="string" [(ngModel)]="input">
+     <div [ngSwitch]="input">
+     <div *ngSwitchCase="'red'" [ngClass]="input1">blue</div>
+     <div *ngSwitchCase="'blue'" [ngClass]="input2">red</div>
+     </div>
+</div>
+<h1>input true or false</h1>
+<div>
+    <input type="text" [(ngModel)]="inputPara">
+    <div [ngSwitch]="inputPara" >
+    <p *ngSwitchCase="'true'">one</p>
+    <p *ngSwitchCase="'true'">two</p>
+    <p *ngSwitchCase="'true'">three</p>
+    <p *ngSwitchCase="'true'">four</p>
+    <p *ngSwitchCase="'true'">five</p>
+    <div [ngSwitch]="inputPara">
+        <p *ngSwitchCase="'false'">one1</p>
+        <p *ngSwitchCase="'false'">one2</p>
+        <p *ngSwitchCase="'false'">one3</p>
+
+    </div>
+</div>
+
+
+<!-- /
+
+--> -->
+
+ <!-- <div class="container">
+     <h1>Registration form</h1>
+     <form #registrtionform="ngForm">
+         <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="user">UserName:</label>
+                        <input type="text" id="user" class="form-control" name="user" [(ngModel)]="se.UserName" autocomplete="off" #username="ngModel" minlength="5" maxlength="10" pattern="^[A-Za-z]+$" required="required" [ngClass]="username.touched && username.invalid?RegistrationInput:''" >
+                        <p>{{se.UserName}}</p>
+                    </div>
+                    <div *ngIf="username.touched && username.invalid">
+                     <div *ngIf="username.errors?.required">
+                         <p>username required</p>
+                     </div>
+                     <div *ngIf="username.errors?.minlength">
+                        <p>minimum should 5</p>
+                     </div>
+                     <div *ngIf="username.errors?.pattern">
+                        <p>alphabets only</p>
+                     </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" class="form-control" name="email" [(ngModel)]="se.Email" autocomplete="off" #email="ngModel" minlength="5" maxlength="30" pattern="^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required="required"  [ngClass]="email.touched && email.invalid?RegistrationInput:''" >
+                        <p>{{se.Email}}</p>
+                    </div>
+                    <div *ngIf="email.touched && email.invalid">
+                    <div *ngIf="email.errors?.required">
+                        <p>Email required</p>
+                    </div>
+                    <div *ngIf="email.errors?.minlength">
+                        <p>minimum should required 5</p>
+                    </div>
+                    <div *ngIf="email.errors?.pattern">
+                        <p>@ required</p>
+                    </div>
+                </div>
+               
+                   <div class="form-group">
+                    <label for="dob">Dob:</label>
+                    <input type="date" id="dob" class="form-control" name="dob" [(ngModel)]="se.Dob" autocomplete="off" #dob="ngModel" minlength="5" maxlength="10" pattern="[A-Za-z]" required="required"  >
+                    <p>{{se.Dob}}</p>
+                </div>
+                 <div class="form-group">
+                       <select class="form-control">
+                           <option *ngFor="let x of DesignationArray">{{x}}</option>
+                       </select>
+                 </div>
+               
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Password">Password:</label>
+                        <input type="password" id="Password" class="form-control" name="password" [(ngModel)]="se.Password" autocomplete="off" #password="ngModel" minlength="5" maxlength="30" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&amp;*-]).{8,30}$" required="required"  [ngClass]="password.touched && password.invalid?RegistrationInput:''" >
+                        <p>{{se.Password}}</p>
+                    </div>
+                <div *ngIf="password.touched && password.invalid">
+                    
+                    <div *ngIf="password.errors?.required">
+                        <p>password required</p>
+                    </div>
+                    <div *ngIf="password.errors?.minlength">
+                        <p>must be length 5</p>
+                    </div>
+                    <div *ngIf="password.errors?.pattern">
+                        <p>must be 1 lower 1 upper 1 special 1 number</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile:</label>
+                    <input type="text" id="mobile" class="form-control" name="mobile" [(ngModel)]="se.Mobile" autocomplete="off" #mobile="ngModel" minlength="10" maxlength="10"  required="required"  [ngClass]="mobile.touched && mobile.invalid?RegistrationInput:''" >
+                    <p>{{se.Mobile}}</p>
+                </div>
+                <div *ngIf="mobile.touched && mobile.invalid">
+                <div *ngIf="mobile.errors?.required">
+                    <p>number required</p>
+                </div>
+                <div *ngIf="mobile.errors?.minlength">
+                    <p> minimum 10 required</p>
+                </div>
+                <div *ngIf="mobile.errors?.maxlength">
+                    <p> maximum 10 required</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" class="form-control" name="address" [(ngModel)]="se.Address" autocomplete="off" #address="ngModel" minlength="10" maxlength="1000" pattern="^[A-Za-z]+$" required="required" [ngClass]="address.touched && address.invalid?RegistrationInput:''" >
+                <p>{{se.Address}}</p>
+            </div>
+            <div *ngIf="address.touched && address.invalid">
+            <div *ngIf="address.errors?.required">
+                <p>address required</p>
+            </div>
+            <div *ngIf="address.errors?.minlength">
+                <p> minimum should be 10</p>
+            </div>
+            <div *ngIf="address.errors?.maxlength">
+                <p> maximum should be 1000</p>
+            </div>
+        </div>
+        <div class="bb1">
+            <button class="btn btn-primary">SUBMIT</button>
+            <button class="btn btn-danger">RESET</button>
+
+        </div >
+       
+           <div>
+            
+        <label for="checkbox" >checkbox</label>
+        
+        <input type="checkbox" id="checkbox" *ngFor="let x of inputCheckbox"  >
+       
+   
+    </div> 
+    
+         
+        
+                
+             </div>
+         </div>
+     </form>
+
+ </div>
+  -->
+ <!-- <div class="container">
+     <div *ngFor="let x of helloArray">
+     <div class="form-group">
+     <label for="firstname">FirstName</label>
+     <input type="text" id="firstname" class="form-control" [(ngModel)]="ss.firstname" name="firstname">
+     <p>{{ss.firstname}}</p>
+    </div>
+    <div class="form-group">
+        <label for="lastname">LastName</label>
+        <input type="text" id="lastname" class="form-control" [(ngModel)]="ss.lastname" name="lastname">
+        <p>{{ss.lastname}}</p>
+ </div>
+ <div class="form-group">
+    <label for="dob">Dob</label>
+    <input type="text" id="dob" class="form-control" [(ngModel)]="ss.dob" name="dob">
+    <p>{{ss.dob}}</p>
+</div>
+
+
+     </div>
+     <div>
+        <button class="btn btn-primary text-uppercase" (click)="onAdd()">add</button>
+        <button class="btn btn-success text-uppercase" (click)="onSave()">save</button>
+    </div>
+    
+ </div>
+  -->
+<!-- <div>
+    <input type="number" [(ngModel)]="no1" [disabled]="no4" [ngClass]="no4?no5:''">
+    <input type="number" [(ngModel)]="no2">
+    <input type="number" [(ngModel)]="no3">
+    <button type="button" (click)="addClick()">add</button>
+    <div *ngFor="let x of numberArray">
+ <p>{{x}}</p>
+    </div>
+</div> -->
+
+<div class="container">
+    
+   
+        <div class="row">
+            <div class="col-md-6">
+        <div >
+        <div class="form-group">
+    <label for="i1">firstname</label>
+    <input type="text" id="i1" [(ngModel)]="person.firstname" name="ss" class="form-control">
+    <p>{{person.firstname}}</p>
+</div>
+<div class="form-group">
+    <label for="i2">lastname</label>
+    <input type="text" id="i2" [(ngModel)]="person.lastname" name="sr" class="form-control">
+    <p>{{person.lastname}}</p>
+</div>
+<div class="form-group">
+    <label for="i3">dob</label>
+    <input type="date" id="i3" [(ngModel)]="person.dob" name="se" class="form-control">
+    <p>{{person.dob}}</p>
+</div>
+</div>
+<div>
+    <button type="button" (click)="add()" class="btn btn-primary">add</button>
+    <button type="button" (click)="save()" class="btn btn-primary">save</button>
+</div>
+</div>
+        
+
+<div class="col-md-6">
+      <table class="table" *ngIf="isHideTable" >
+          <thead>
+          <tr >
+              <th>firstname</th>
+              <th>lastname</th>
+              <th>dob</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let x of personArr">
+              <td>{{x.firstname}}</td>
+              <td>{{x.lastname}}</td>
+              <td>{{x.dob}}</td>
+              
+          </tr>
+        </tbody>
+      </table>
+</div>
+</div>  
+
+</div>
+ 
+ <div *ngFor="let x of pr">
+<p>{{x.id}}</p>
+<p>{{x.userid}}</p>
+<p>{{x.title}}</p>
+
+ </div>
+<router-outlet></router-outlet>
+<app-course-list></app-course-list>

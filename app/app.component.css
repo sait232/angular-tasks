@@ -1,0 +1,54 @@
+.c1{
+    background-color:black;
+    color: blue;
+}
+.c2{
+  font-size: large; 
+}
+#css1{
+    background-color: red;
+    color:blue;
+}
+.b1{
+    background-color:black;
+}
+.b2{
+    background-color: red;
+}
+.b3{
+  background-color: green;  
+}
+.b4{
+    background-color: orange;
+}
+.b5{
+    background-color: blue;
+}
+.i1{
+   background-color: blue;
+}
+.i2{
+    background-color: red;
+}
+.ic{
+    background-color: red;
+}
+
+.aa2{
+    border: 5px solid red;
+}
+.aa3{
+    border: 5px solid green;
+}
+.n5{
+    background-color: red;
+}
+.n6{
+    background-color:green;
+}
+.hs,th,td{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+

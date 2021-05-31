@@ -1,6 +1,9 @@
 import { Component} from '@angular/core';
 import { DataService } from './data.service';
-
+export class student{
+  names:string='';
+  password:string='';
+}
 
 @Component({
   selector: 'app-root',
@@ -8,43 +11,32 @@ import { DataService } from './data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- pr:any;
- ir:any;
- 
+s1:student=new student();
+students:string='';
 
- user:any[]=[];
- color:string='ccp';
   
+ 
 constructor(private _servicing:DataService){
  
 }
 ngOnInit(): void{
-  this.getData1();
-  
   
   }
   
-getData1(){
-  this. _servicing.getData().subscribe(
-    response=>{
-      this.pr=response;
-    }
-  )
-}
-// *userid 1//
-public getUserId1(){
-  this._servicing.getUserId(this.ir).subscribe(
-    response=>{
-       this.user.push(response);
+valid(){
+  if(this.s1.names=="marripellysaiteja@gmail.com"&&this.s1.password=="lordshiva123"){
+    
+    this.students="login sucess";
+    
+   
 
-      
-    }
-  )
+  }
+  else{
+    this.students="login failed";
+   
+  }
 }
- userAdd(){
-  alert("hello");
-this.getUserId1(); 
-}
+
 
 }
 

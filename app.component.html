@@ -1,0 +1,26 @@
+
+<div class="container" >
+   
+    <div>
+        <label for="id"></label>
+    <input type="text" id="id" [(ngModel)]="ir">
+</div>
+
+<div>
+    <button type="button" (click)="userAdd()">add</button>
+</div>
+<table *ngFor="let x of user" >
+    <tr>
+        <th>id</th>
+        <th>body</th>
+        <th>title</th>
+    </tr>
+    <td>{{x.id}}</td>
+    <td>{{x.title}}</td>
+    <td>{{x.body}}</td>
+</table>
+
+</div>
+
+<router-outlet></router-outlet>
+<app-course-list></app-course-list>

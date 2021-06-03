@@ -9,13 +9,11 @@ export class DataService {
   constructor(private _service:HttpClient) {
 
    }
-getData(){
- return this. _service.get("https://jsonplaceholder.typicode.com/posts");
+getUserId(){
+ return this._service.get("https://jsonplaceholder.typicode.com/posts");
 }
-/*user id only*/
-getUserId(id:number){
- return  this._service.get("https://jsonplaceholder.typicode.com/posts/"+id);
+// get userinfo//
+getUserInfo(id:number){
+  return this._service.get("https://jsonplaceholder.typicode.com/posts/"+id);
 }
-
-
 }

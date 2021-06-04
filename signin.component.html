@@ -1,0 +1,7 @@
+<div   [ngStyle]="students?{'background-color':'red'}:{'background-color':''}">
+    <input type="text" [(ngModel)]="s1.names">
+    <input type="text" [(ngModel)]="s1.password">
+    <button type="button" (click)="valid()">add</button>
+    <p>{{students}}</p>
+   
+   </div>

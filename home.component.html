@@ -1,0 +1,5 @@
+<p>home works!</p>
+<div *ngFor="let users of user">
+       <p><a [routerLink]="['/user-info',users.id]">{{users.id}}</a> </p>
+      
+</div>

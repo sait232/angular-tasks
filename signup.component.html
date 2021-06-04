@@ -1,0 +1,55 @@
+<p>signup works!</p>
+{{registrationFrom.value | json}}
+<div class="container">
+      <div class="form-group" [formGroup]="registrationFrom">
+         <label for="FirstName">Firstname</label>
+         <input type="text" id="FirstName"  class="form-control" name="FirstName" formControlName="FirstName">
+        
+         <div *ngIf="getfirstname().touched && getfirstname().invalid">
+         <div *ngIf="getfirstname().errors.required">
+         <p>username required</p>
+         </div>
+         <div *ngIf="getfirstname().errors.minlength">
+            <p>minimum should be 3</p>
+            </div>
+         </div>
+        </div>
+        <div class="form-group" [formGroup]="registrationFrom" >
+            <label for="last">Lastname</label>
+            <input type="text"  id="last"  class="form-control" name="FirstName" formControlName="LastName">
+           
+            <div *ngIf="getlastname().touched && getlastname().invalid">
+            <div *ngIf="getlastname().errors.required">
+            <p>username required</p>
+            </div>
+            <div *ngIf="getlastname().errors.minlength">
+               <p>minimum should be 3</p>
+               </div>
+            </div>
+           </div>
+           <div class="form-group" [formGroup]="registrationFrom">
+            <label for="password">password</label>
+            <input type="text" id="password"  class="form-control" name="password" formControlName="Password">
+           
+            <div *ngIf="getpassword().touched && getpassword().invalid">
+            <div *ngIf="getpassword().errors.required">
+            <p>password required</p>
+            </div>
+            <div *ngIf="getpassword().errors.pattern">
+               <p>must be 1 lower 1 upper 1 special 1 number</p>
+               </div>
+            </div>
+            <div class="form-group" [formGroup]="registrationFrom">
+                <label for="password">password</label>
+                <input type="text" id="password"  class="form-control" name="password" formControlName="Password">
+               
+                <div *ngIf="getpassword().touched && getpassword().invalid">
+                <div *ngIf="getpassword().errors.required">
+                <p>password required</p>
+                </div>
+                <div *ngIf="getpassword().errors.pattern">
+                   <p>must be 1 lower 1 upper 1 special 1 number</p>
+                   </div>
+                </div>
+      </div>
+

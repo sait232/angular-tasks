@@ -1,11 +1,9 @@
 
-<div   [ngStyle]="students?{'background-color':'red'}:{'background-color':''}">
- <input type="text" [(ngModel)]="s1.names">
- <input type="text" [(ngModel)]="s1.password">
- <button type="button" (click)="valid()">add</button>
- <p>{{students}}</p>
+<div>
+    <input type="text" [(ngModel)]="id">
+    <button (click)="add()"></button>
+    <div *ngFor="let x of array">
+        <p>{{x}}</p>
 
+    </div>
 </div>
-
-<router-outlet></router-outlet>
-<app-course-list></app-course-list>

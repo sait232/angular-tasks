@@ -1,0 +1,34 @@
+
+    <p>user-home works!</p>
+    <div class="container">
+        <table class="table table-bordered table-striped" >
+            <thead>
+            <tr>
+                
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>email</th>
+                <th>password</th>
+                <th>profession</th>
+                <th>country</th>
+                <th>city</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of allUsersData">
+                <!-- {{allUsersData | json}} -->
+             
+                <td>{{x.FirstName}}</td>
+                <td>{{x.LastName}}</td>
+                <td>{{x.Email}}</td>
+                <td>{{x.Password}}</td>
+               <td>{{x.Profession}}</td>
+                <td>{{x.Country}}</td>
+                <td>{{x.City}}</td>
+                <td><button class="btn btn-danger" (click)=" delete(x.id)">Delete</button></td>
+                <td><button  class="btn btn-primary" (click)="onUpdate(x.id)">Update</button></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+

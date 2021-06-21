@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from './data.service';
 
 
@@ -8,23 +8,16 @@ import { DataService } from './data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- array:any[]=[];
- id:any;
-constructor(private _servicing:DataService){
-}
-getRetrieval(){
-  this._servicing.getUser(this.id).subscribe(
-    (response:any)=>{
-         this.array.push(response); 
-         console.log(this.array.push(response));   
-    }
-  ),
-  (error:any)=>console.log(error);
-}
-add(){
-this.getRetrieval();
+
+  constructor(private _services:DataService) {
+  }
+
+
+ ngOnInit(): void {
+  
 }
 
-  }
+}
+
 
 

@@ -1,0 +1,38 @@
+<p>login</p>
+{{loginForm.vaue | json}}
+<div class="container">
+   <form [formGroup]="loginForm" (ngSubmit)="loginFormData()">
+       <div class="form-group">
+            <label for="UserName">username</label>
+            <input type="text" id="UserName" class="form-control" name="UserName" formControlName="Email">
+            <!-- <div *ngIf="getUserName().touched && getUserName().invalid">
+              <div *ngIf=getUserName().errors.required>
+                  <p>username is required</p>
+              </div>
+             
+              <div *ngIf=getUserName().errors.pattern>
+                <p>must be alphabets</p>
+            </div>
+            <div *ngIf=getUserName().errors.minlength>
+                <p>minimum 3 required</p>
+            </div>
+
+            </div> -->
+       </div>
+       <div class="form-group">
+        <label for="Password">password</label>
+        <input type="text" id="Password" class="form-control" name="Password" formControlName="Password">
+        <!-- <div *ngIf="getpassword().touched && getpassword().invalid">
+          <div *ngIf=getpassword().errors.required>
+              <p>password is required</p>
+          </div>
+          <div *ngIf=getpassword().errors.pattern>
+            <p>must be 1 number 1 secial character 1 capital alpha 1 small alpha</p>
+        </div>
+        </div> -->
+       </div>
+       <div>
+           <button class="btn btn-success">login</button>
+       </div>
+   </form>
+</div>

@@ -1,0 +1,114 @@
+<div class="container">
+    <!-- {{registrationForm.value | json}} -->
+     <form [formGroup]="registrationForm" (ngSubmit)="retrievingPostUser()">
+         <div class="form-group" >
+            <label for="FirstName">Firstname</label>
+            <input type="text" id="FirstName"  class="form-control" name="FirstName" formControlName="FirstName" autocomplete="off">
+            <div *ngIf="getFirstName().touched && getFirstName().invalid">
+
+                <div *ngIf="getFirstName().errors.required">
+                    <p>firstname is required</p>
+                </div>
+                <div *ngIf="getFirstName().errors.pattern">
+                   <p>must be alphabets only</p>
+               </div>
+               <div *ngIf="getFirstName().errors.minlength">
+                <p>minimum 3 requird</p>
+            </div>
+               </div>
+         </div>
+         <div class="form-group">
+            <label for="LastName">Lastname</label>
+            <input type="text" id="LastName"  class="form-control" name="LastName" formControlName="LastName" autocomplete="off">
+            <div *ngIf="getLastName().touched && getLastName().invalid">
+
+                <div *ngIf="getLastName().errors.required">
+                    <p>Lastname is required</p>
+                </div>
+                <div *ngIf="getLastName().errors.pattern">
+                   <p>must be alphabets only</p>
+               </div>
+               <div *ngIf="getLastName().errors.minlength">
+                <p>minimum 3 requird</p>
+            </div>
+               </div>
+         </div>
+         <div class="form-group" >
+            <label for="Email">Email</label>
+            <input type="text" id="Email"  class="form-control" name="Email" formControlName="Email" autocomplete="off">
+            <div *ngIf="getEmail().touched && getEmail().invalid">
+
+                <div *ngIf="getEmail().errors.required">
+                    <p>Email is required</p>
+                </div>
+                <div *ngIf="getEmail().errors.pattern">
+                   <p>must be @ specail character . requird</p>
+               </div>
+               </div>
+         </div>
+         <div class="form-group" >
+            <label for="Password">Password</label>
+            <input type="text" id="Password"  class="form-control" name="Password" formControlName="Password" autocomplete="off">
+            <div *ngIf="getPassword().touched && getPassword().invalid">
+
+             <div *ngIf="getPassword().errors.required">
+                 <p>password is required</p>
+             </div>
+             <div *ngIf="getPassword().errors.pattern">
+                <p>must be 1 lower 1 upper 1 special 1 number</p>
+            </div>
+            </div>
+         </div>
+         <div class="form-group" >
+            <label for="Profession">Profession</label>
+            <input type="text" id="Profession"  class="form-control" name="Profession" formControlName="Profession" autocomplete="off">
+            <div *ngIf="getProfession().touched && getProfession().invalid">
+
+                <div *ngIf="getProfession().errors.required">
+                    <p>profession is required</p>
+                </div>
+                <div *ngIf="getProfession().errors.pattern">
+                   <p>must be alphabets only</p>
+               </div>
+               <div *ngIf="getProfession().errors.minlength">
+                <p>minimum 3 requird</p>
+            </div>
+               </div>
+         </div>
+         <div class="form-group" >
+            <label for="Country">Country</label>
+            <input type="text" id="Country"  class="form-control" name="Country" formControlName="Country" autocomplete="off">
+            <div *ngIf="getCountry().touched && getCountry().invalid">
+
+                <div *ngIf="getCountry().errors.required">
+                    <p>country is required</p>
+                </div>
+                <div *ngIf="getCountry().errors.pattern">
+                   <p>must be alphabets only</p>
+               </div>
+               <div *ngIf="getCountry().errors.minlength">
+                <p>minimum 3 requird</p>
+            </div>
+               </div>
+         </div>
+         <div class="form-group" >
+            <label for="City">City</label>
+            <input type="text" id="City"  class="form-control" name="City" formControlName="City" autocomplete="off">
+            <div *ngIf="getCity().touched && getCity().invalid">
+
+                <div *ngIf="getCity().errors.required">
+                    <p>country is required</p>
+                </div>
+                <div *ngIf="getCity().errors.pattern">
+                   <p>must be alphabets only</p>
+               </div>
+               <div *ngIf="getCity().errors.minlength">
+                <p>minimum 3 requird</p>
+            </div>
+               </div>
+         </div>
+         <button type="submit" class="btn btn-success" [disabled]="registrationForm.invalid">submit</button>
+         <button type="button" class="btn btn-primary">click</button>
+     </form>
+
+</div>  
